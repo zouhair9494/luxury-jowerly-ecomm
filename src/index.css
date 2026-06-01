@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fdf9f0;
+  --color-gold-100: #f9f0db;
+  --color-gold-200: #f2e0b3;
+  --color-gold-300: #e8cc80;
+  --color-gold-400: #dcb44d;
+  --color-gold-500: #c9a03a;
+  --color-gold-600: #a67f2e;
+  --color-gold-700: #856225;
+  --color-gold-800: #6d4f23;
+  --color-gold-900: #5c4221;
+  --color-cream-50: #faf8f5;
+  --color-cream-100: #f5f0e8;
+  --color-cream-200: #ebe3d5;
+  --color-cream-300: #ddd0ba;
+  --color-cream-400: #c9b598;
+  --color-cream-500: #b89e7e;
+  --color-cream-600: #a68866;
+  --color-cream-700: #8a6f54;
+  --color-cream-800: #725c48;
+  --color-cream-900: #5e4c3e;
+  --color-luxe-black: #0a0a0a;
+  --color-luxe-dark: #111111;
+  --color-luxe-charcoal: #1a1a1a;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtM.woff2') format('woff2');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #0a0a0a;
+  color: #f5f0e8;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9a03a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dcb44d;
+}
+
+/* Gold shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #c9a03a 0%, #f2e0b3 25%, #dcb44d 50%, #f2e0b3 75%, #c9a03a 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Hero overlay gradient */
+.hero-gradient {
+  background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.95) 100%);
+}
+
+/* Image hover zoom */
+.img-zoom {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.img-zoom:hover {
+  transform: scale(1.08);
+}
+
+/* Line animation */
+.line-expand {
+  width: 0;
+  transition: width 0.5s ease-out;
+}
+
+.group:hover .line-expand {
+  width: 100%;
+}
+
+/* WhatsApp pulse */
+@keyframes whatsappPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-pulse {
+  animation: whatsappPulse 2s infinite;
+}
